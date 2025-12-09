@@ -19,7 +19,7 @@ resource "helm_release" "this" {
 
   atomic            = true
   dependency_update = true
-  create_namespace  = true
+  create_namespace  = false
 
   # The magic knob: changes when any YAML file in the chart changes
   set = [{
