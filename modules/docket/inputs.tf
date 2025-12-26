@@ -26,5 +26,5 @@ variable "image_tags" {
 variable "image_platforms" {
   description = "Platforms to build the image for"
   type        = list(string)
-  default     = ["linux/amd64"]
+  default     = ["linux/amd64", "linux/arm64"]
 }
