@@ -1,4 +1,4 @@
-output "app_auth" {
+output "auth" {
   value = {
     id              = var.id
     installation_id = var.installation_id
