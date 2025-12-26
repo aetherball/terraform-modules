@@ -21,6 +21,8 @@ resource "helm_release" "this" {
   dependency_update = true
   create_namespace  = false
   wait_for_jobs     = true
+  lint              = true
+  max_history       = 10
 
   # The magic knob: changes when any YAML file in the chart changes
   set = [{
