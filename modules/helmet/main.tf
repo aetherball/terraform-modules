@@ -25,8 +25,12 @@ resource "helm_release" "this" {
   max_history       = 10
 
   # The magic knob: changes when any YAML file in the chart changes
-  set = [{
-    name  = "chartHash"
-    value = local.chart_hash
-  }]
+  # Merge chartHash with user-provided set values
+  set = concat(
+    [{
+      name  = "chartHash"
+      value = local.chart_hash
+    }],
+    var.set
+  )
 }
